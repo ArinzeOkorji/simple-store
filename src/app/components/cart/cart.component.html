@@ -1,0 +1,42 @@
+<div class="bg-white px-2 pb-2" [ngClass]="{'content': !fullPage}" (click)="$event.stopPropagation()">
+    <div *ngIf="cart.length">
+    <div *ngIf="!fullPage" class='pt-3'><span class="fw-bold">My Bag,</span> {{cart.length}} item(s)</div>
+    <div *ngIf="fullPage" class='pt-3'><span class="fw-700 fs-32">CART</span></div>
+        <app-cart-item *ngFor="let product of cart" [fullPage]="fullPage" [product]="product"
+            (calulateTotal)="calculateTotal($event)"></app-cart-item>
+
+        <div class="mt-5">
+            <div *ngIf="fullPage">
+                <div class="d-flex align-items-center mb-2">
+                    <div class="fs-24">Tax 21%:</div>
+                    <div class="fw-700 ms-2 fs-24">{{tax | currency: currency:'symbol':'1.2-2'}}</div>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <div class="fs-24">Quantity:</div>
+                    <div class="fw-700 ms-2 fs-24">{{quantity}}</div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="fs-24">Total:</div>
+                    <div class="fw-bold ms-2 fs-24">{{total + tax | currency: currency:'symbol':'1.2-2'}}</div>
+                </div>
+            </div>
+            <div *ngIf="!fullPage">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class='fw-bold'>Total:</div>
+                    <div class="fw-bold">{{total | currency: currency:'symbol':'1.2-2'}}</div>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between mt-4">
+                <button type="button" class="btn btn-outline-secondary fw-bold bg-0" *ngIf="!fullPage" (click)="goToCart()">VIEW BAG</button>
+                <button angular4-paystack
+                [paystackOptions]="options" (callback)="paymentDone($event)" (onClose)="showError" type="button" class="btn btn-green fw-bold">
+                {{fullPage ? 'ORDER' : 'CHECK OUT' }}
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+            </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!cart.length">Cart is empty</div>
+</div>

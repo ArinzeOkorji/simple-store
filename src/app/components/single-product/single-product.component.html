@@ -1,0 +1,13 @@
+<div class="px-3 product pointer" routerLink="/product/{{product.id}}">
+    <div class="img-container text-center">
+        <div class="img h-100 w-100" [ngStyle]="{'backgroundImage': 'url(' + product.image + ')'}"></div>
+    </div>
+
+    <div class="details pb-2">
+        <div class="cart align-items-center justify-content-center" (click)="selectProduct(product);$event.stopPropagation()">
+            <img src="assets/icons/empty-cart.svg" alt="">
+        </div>
+        <div class="fw-300">{{product.brand}} {{product.title}}</div>
+        <div class="fw-500">{{product.price | currency: currency}}</div>
+    </div>
+</div>

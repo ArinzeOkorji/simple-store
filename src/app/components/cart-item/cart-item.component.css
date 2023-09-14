@@ -1,0 +1,49 @@
+.colors {
+    height: 16px;
+    width: 16px;
+}
+
+.large-grid .colors {
+    height: 30px;
+    width: 30px;
+}
+
+.quantityBtn {
+    height: 24px;
+    width: 24px;
+}
+
+.sizes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24px, auto));
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+
+.large-grid .sizes-list {
+    height: 34px;
+    width: 220px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 24px 0.5fr;
+}
+
+.large-grid {
+    display: flex;
+}
+
+.img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.large-grid .img-container {
+    width: 118px;
+    
+    @media screen and (min-width: 992px) {
+        width: 147px;
+    }
+}

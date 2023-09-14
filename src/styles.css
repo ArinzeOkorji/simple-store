@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+
+*:not(i) {
+    font-family: 'Raleway', sans-serif;
+}
+
+.text-green {
+    color: #5ECE7B;
+}
+
+.bg-green {
+    background-color: #5ECE7B !important;
+}
+
+.btn-green {
+    color: #fff;
+    background-color: #5ECE7B !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.border-green {
+    border-color: #5ECE7B !important;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+.fs-18 {
+    font-size: 18px;
+}
+.fs-24 {
+    font-size: 24px;
+}
+.fs-32 {
+    font-size: 32px;
+}
+
+.fw-500 {
+    font-weight: 500 !important;
+}
+.fw-400 {
+    font-weight: 400 !important;
+}
+.fw-300 {
+    font-weight: 300 !important;
+}
+.fw-700 {
+    font-weight: 700 !important;
+}
+.fw-600 {
+    font-weight: 600 !important;
+}
+
+.ff-roboto-condensed {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #5ece7b;
+  }
+
+  ::-webkit-scrollbar-button {
+    height: 0px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5ECE7B;
+  }

@@ -1,0 +1,51 @@
+
+<div class="header sticky-top pt-3 bg-white">
+
+    <div class="col-12 col-md-auto navs mt-4 mt-md-0">
+      <ul class="d-flex align-items-center justify-content-between p-0 m-0 nav">
+        <li class="border-bottom pb-3 px-3 border-3 pointer" routerLink="products" [queryParams]="{category: 'women_main'}" #active='routerLinkActive'
+          routerLinkActive [ngClass]="{'text-green border-green': active.isActive, 'border-white': !active.isActive}">
+          Women</li>
+        <li class="border-bottom pb-3 px-3 border-3 border-white pointer">Men</li>
+        <li class="border-bottom pb-3 px-3 border-3 border-white pointer">Kid</li>
+      </ul>
+    </div>
+
+
+    <div class="logo">
+      <img src="assets/icons/logo.svg" alt="">
+    </div>
+
+
+    <div class="dropdowns">
+      <ul class="d-flex align-items-center justify-content-end p-0 m-0 nav">
+        <li class="px-3 pointer">
+          <!-- Example split danger button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-white p-0 dropdown-toggle dropdown-toggle-split"
+              data-bs-toggle="dropdown" aria-expanded="false">{{selectedCurrency}}
+            </button>
+            <ul class="dropdown-menu p-0 bg-white pt-0 mt-3 border-0 currency">
+              <li class="fw-500 dropdown-item text-center py-2" (click)="selectCurrecy(currency)" *ngFor="let currency of currencyList">{{currency}}</li>
+            </ul>
+          </div>
+        </li>
+        <li class="px-3 pointer">
+          <div class="btn-group">
+            <div class="p-0 dropdown-toggle-split" data-bs-toggle="dropdown" data-bs-display="static"
+              aria-expanded="false" id="dropdown-toggle">
+              <img src="assets/icons/black-cart.svg" alt="">
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" *ngIf="cartLength">
+                {{cartLength}}
+                <span class="visually-hidden">cart</span>
+              </span>
+            </div>
+            <div id="dropdown-menu" class="dropdown-menu cart dropdown-menu-end dropdown-menu-start bg-white pt-0 mt-3 border-0">
+              <app-cart [fullPage]="false"></app-cart>
+            </div>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </div>

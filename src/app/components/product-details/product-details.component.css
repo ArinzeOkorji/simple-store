@@ -1,0 +1,71 @@
+.main {
+    @media screen and (min-width: 992px) {
+        height: 75vh;
+    }
+}
+
+.variant {
+    width: 60px;
+    height: 85px;
+    margin-right: 5px;
+    @media screen and (min-width: 992px) {
+        height: 75px;
+        width: 100%;
+        margin-top: 16px;
+        margin-right: 0;
+    }
+}
+
+.images {
+    height: 100%;
+}
+
+.main-variant {
+    height: 60vh;
+    @media screen and (min-width: 992px) {
+        width: 100%;
+    height: 100%;
+    }
+}
+
+.variant, .main-variant {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sizes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(65px, auto));
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+
+.sizes-list li {
+    height: 35px;
+}
+
+.colors {
+    height: 30px;
+    width: 30px;
+}
+
+.variant-preview, .description {
+    height: 100%;
+    
+    padding-right: 10px;
+
+    @media screen and (min-width: 992px) {
+        overflow-y: scroll;
+    }
+}
+
+::ng-deep h3 {
+    font-size: 14px !important;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 30px;
+}
